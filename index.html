@@ -3,8 +3,10 @@
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#2563eb"><title>Daily</title><link rel="manifest" href="manifest.json"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
 <body>
   <main class="shell" id="appShell"></main>
-  <div class="version-badge">نسخه ۲.۱</div>
+  <div class="version-badge">نسخه ۲.۱.۴</div>
   <div class="update-popover hidden" id="updatePopover"></div>
   <template id="daySummaryTemplate"><article class="day-card summary-day"><div class="day-head"><div><span class="day-name"></span><span class="day-date"></span></div><span class="day-total"></span></div><div class="section-label">کارهای روز</div><div class="summary-list tasks-summary"></div><div class="section-label expense-label">هزینه‌های روز</div><div class="summary-list expenses-summary"></div><button class="open-day ghost-btn">مشاهده و ویرایش روز ←</button></article></template>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
   <script src="app.js"></script>
 </body></html>
