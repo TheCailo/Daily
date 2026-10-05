@@ -1,5 +1,5 @@
-const CACHE='daily-cache-v8';
-const ASSETS=['./','index.html','styles.css','app.js','supabase-config.js','manifest.json','fonts/Vazirmatn-Regular.ttf','fonts/Vazirmatn-Bold.ttf'];
+const CACHE='daily-cache-v11';
+const ASSETS=['./','index.html','styles.css','app.js','supabase-config.js','manifest.json','fonts/Vazirmatn-Regular.ttf','fonts/Vazirmatn-Bold.ttf','icons/daily-32.png','icons/daily-192.png','icons/daily-512.png','sounds/ding-sound-effect.mp3'];
 
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
