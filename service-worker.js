@@ -1,4 +1,4 @@
-const CACHE='daily-cache-v13';
+const CACHE='daily-cache-v14';
 const ASSETS=['./','index.html','styles.css','app.js','supabase-config.js','manifest.json','fonts/Vazirmatn-Regular.ttf','fonts/Vazirmatn-Bold.ttf','icons/daily-32.png','icons/daily-192.png','icons/daily-512.png','sounds/ding-sound-effect.mp3'];
 
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
