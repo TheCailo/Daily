@@ -112,7 +112,7 @@ const DailyChatbot=(()=>{
     if(action.type==='expense')data.expenses.push({desc:action.desc,amount:action.amount,category:action.category});
     else if(action.type==='task')data.tasks.push({text:action.text,duration:action.duration,done:false,starred:false});
     else if(action.type==='note'){if((data.note||'')!==action.expected)return 'یادداشت تغییر کرده؛ دوباره درخواست بده تا چیزی از دست نرود.';data.note=(data.note?data.note+'\n':'')+action.note}
-    else if(['complete_task','star_task'].includes(action.type)){const task=data.tasks[action.index];if(!task||JSON.stringify(task)!==action.expected)return 'این کار تغییر کرده؛ لطفاً دوباره درخواست بده.';if(action.type==='complete_task')task.done=true;else task.starred=true}
+    else if(['complete_task','star_task'].includes(action.type)){const task=data.tasks[action.index];if(!task||JSON.stringify(task)!==action.expected)return 'این کار تغییر کرده؛ لطفاً دوباره درخواست بده.';if(action.type==='complete_task'){if(typeof DailyTasks!=='undefined')DailyTasks.setDone(task,true);else task.done=true}else task.starred=true}
     else return 'این عملیات پشتیبانی نمی‌شود.';
     state[action.date]=data;save();return 'با موفقیت در '+fmtJ(new Date(action.date+'T12:00:00'))+' ثبت شد. همگام‌سازی با حساب، به اتصال دیتابیس نیاز دارد.';
   }
